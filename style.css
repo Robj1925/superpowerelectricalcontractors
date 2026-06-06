@@ -370,6 +370,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: rgba(192,20,26,0.06);
   border-radius: 0 var(--radius) var(--radius) 0;
 }
+.van-photo {
+  margin-bottom: 24px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--dark-border);
+}
+.van-photo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.van-photo:hover img { transform: scale(1.03); }
 .why-quote p { font-style: italic; color: rgba(255,255,255,0.8); margin-bottom: 10px; line-height: 1.6; }
 .why-quote cite { font-size: 0.83rem; color: var(--muted); font-style: normal; font-weight: 500; }
 .why-stats {
@@ -496,7 +511,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
   gap: 16px;
 }
 .gallery-item {
@@ -506,7 +520,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   aspect-ratio: 4/3;
 }
 .gallery-item--tall { grid-row: span 2; aspect-ratio: unset; }
-.gallery-item--wide { grid-column: span 2; aspect-ratio: 16/7; }
 .gallery-item img {
   width: 100%; height: 100%;
   object-fit: cover;
@@ -803,7 +816,7 @@ textarea { resize: vertical; min-height: 110px; }
   .discounts-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-item--tall { grid-row: span 1; }
-  .gallery-item--wide { grid-column: span 1; aspect-ratio: 4/3; }
+
   .review-card { flex: 0 0 calc(50% - 12px); }
 }
 
@@ -828,7 +841,7 @@ textarea { resize: vertical; min-height: 110px; }
   .hero-btns { flex-direction: column; align-items: flex-start; }
   .trust-bar-inner { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
   .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-item, .gallery-item--wide, .gallery-item--tall { aspect-ratio: 4/3; grid-column: span 1; grid-row: span 1; }
+  .gallery-item, .gallery-item--tall { aspect-ratio: 4/3; grid-column: span 1; grid-row: span 1; }
   .review-card { flex: 0 0 100%; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; text-align: center; }
